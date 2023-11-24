@@ -20,7 +20,7 @@ Visualized in the figure below are the vertices (cities) and their interconnecti
 What is the maximum flow that we can send from Madrid to Warsaw?
 `
 <p align="center">
-  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/b4acd52f-f893-4710-878d-5e5d1740ec7b" width="400">
+  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/abf36914-1499-46f0-b295-0add2fe2111e" width="400">
 </p>
 
 ###
@@ -42,7 +42,47 @@ What is the maximum flow that we can send from Madrid to Warsaw?
 
 4. **Return the maximum flow achieved.**
 
-``Let's find Maximum flow for the graph above:
+Let's find the Maximum flow for the graph bellow:
+Just a disclaimer: I've chosen this graph below because I understand the concept what this algorithm does and backtracking edges.It's easy and simple to comprehend.
+
+Let's imagine the graph bellow and we want to know what is the maximum flow where ``T`` is the source and ``S`` is Sink.
+
+<p align="center">
+  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/ac75bd5f-f4ed-4d1f-96d5-c2d0f8ab5528" width="400">
+</p>
+
+
+
+
+Choosing the path  ``T->A->S`` the minimum capacity is ``10`` so we decrease the value of the capacity.
+<p align="center">
+  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/231050d7-e056-42c2-ab7d-03fb68174b11" width="400">
+</p>
+
+
+
+Choosing the path  ``T->B->S`` the minimum capacity is ``10`` so we decrease the value of the capacity.
+<p align="center">
+  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/2903a2e0-46e5-4962-83ef-0bb361aa671b" width="400">
+</p>
+
+As we don't have any path left from our source to sink. We see that the maximum flow is ``20``.
+
+However,something intriguing is happening here, because you could ask what would have happened if we had chosen the path ``T->B->A->S``. And that's the point of this brilliant algorithm.
+
+Let's backtrack and see what would have happened if we had chosen the ``T->B->A->S`` at first.
+
+Choosing the path ``T->B->A->S`` => the minimum capacity is ``10``. Decrease the value's capacity.
+
+<p align="center">
+  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/4e600c88-f2e8-4388-8ebd-e5ed4c866392" width="400">
+</p>
+
+
+As you can see there is a hugh problem here. There is no path remaining from our source vertex to the target and we found a maximum flow of ``10``.
+
+
+
 
 Initiate each edge with ``0 flow``.
 
