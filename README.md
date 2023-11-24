@@ -1,6 +1,6 @@
 # Ford-Fulkerson Algorithm
 
-This repository contains my implementation of Ford Fulkerson's algorithm. I created this repository to explains this remarkable algorithm, which has an story behind it. Furthermore, I've come across websites attempting to explain this algorithm that are either incorrect or employ a suboptimal approach.
+This repository contains my implementation of Ford Fulkerson's algorithm. I created this repository to break down this remarkable algorithm, which has an story behind it. Furthermore, I've come across websites attempting to explain this algorithm that are either incorrect or employ a suboptimal approach. 
 
 Ford Fulkerson's algorithm was developed by Lester Randolph Ford, Jr. and Delbert Ray Fulkerson. The algorithm is designed to find the maximum flow in a flow network.
 
