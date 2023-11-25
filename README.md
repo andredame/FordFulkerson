@@ -81,6 +81,12 @@ Choosing the path ``T->B->A->S`` => the minimum capacity is ``10``. Decrease the
 
 As you can see there is a huge problem here. There is no path remaining from our source vertex to the target and we found a maximum flow of ``10``.Due to this bad choice that we have chosen, Ford-Fulkerson introduced the concept of backtracking edges for those edges that we have already use. This tackles the bad choice that can be made.
 
+<p align="center">
+  <img src="https://github.com/andredame/FordFulkerson/assets/109314147/25c84acb-39c7-44b8-8941-140707c444e8" width="400">
+</p>
+
+
+
 
 
 Initiate each edge with ``0 flow``.
