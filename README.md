@@ -79,8 +79,7 @@ Choosing the path ``T->B->A->S`` => the minimum capacity is ``10``. Decrease the
 </p>
 
 
-As you can see there is a hugh problem here. There is no path remaining from our source vertex to the target and we found a maximum flow of ``10``.
-
+As you can see there is a huge problem here. There is no path remaining from our source vertex to the target and we found a maximum flow of ``10``.Due to this bad choice that we have chosen, Ford-Fulkerson introduced the concept of backtracking edges for those edges that we have already use. This tackles the bad choice that can be made.
 
 
 
