@@ -68,31 +68,28 @@ Choosing the path  ``T->B->S`` the minimum capacity is ``10`` so we decrease the
 
 As we don't have any path left from our source to sink. We see that the maximum flow is ``20``.
 
-However,something intriguing is happening here, because you could ask what would have happened if we had chosen the path ``T->B->A->S``. And that's the point of this brilliant algorithm.
+However,something intriguing is happening here, because you could ask what would have happened if we had chosen the path ``T->A->B->S``. And that's the point of this brilliant algorithm.
 
-Let's backtrack and see what would have happened if we had chosen the ``T->B->A->S`` at first.
+Let's backtrack and see what would have happened if we had chosen the ``T->A->B->S`` at first.
 
-Choosing the path ``T->B->A->S`` => the minimum capacity is ``10``. Decrease the value's capacity.
+Choosing the path ``T->A->B->S`` => the minimum capacity is ``10``. Decrease the value's capacity.
 
 <p align="center">
   <img src="https://github.com/andredame/FordFulkerson/assets/109314147/4e600c88-f2e8-4388-8ebd-e5ed4c866392" width="400">
 </p>
 
 
-As you can see there is a huge problem here. There is no path remaining from our source vertex to the target and we found a maximum flow of ``10``.Due to this bad choice that we have chosen, Ford-Fulkerson introduced the concept of backtracking edges for those edges that we have already use. This tackles the bad choice that can be made.
+As you can see there is a huge problem here. There is no path remaining from our source vertex to the target and we found a maximum flow of ``10``.
+
+To address every potential "bad path" that could be chosen, the Ford-Fulkerson creates a reverse edge for every original edge in the residual graph. This is done to keep track of the flow that is being utilized on the original edge and to represent the residual capacity available for potential future flows. AS we can see bellow. ``T->A->B->S`` each edge have a reverse edge with the flow that is being used.
 
 <p align="center">
   <img src="https://github.com/andredame/FordFulkerson/assets/109314147/25c84acb-39c7-44b8-8941-140707c444e8" width="400">
 </p>
 
+Therefore, we can find the path ``T -> B -> A -> S`` achieving a maximum flow of 20.
 
 
-
-
-Initiate each edge with ``0 flow``.
-
-Find a Path from ``Madrid`` to ``Warsaw`` ==========> ``Madrid`` -> ``London`` -> ``Hamburg`` -> ``Warsaw`` ``Warsaw``. Find the minimum capacity along these edges, which is **2** from ``Hamburg`` -> ``Warsaw``.
-Update the values of each edge by decrementing the capacity according to the flow.
 
 
 ``
